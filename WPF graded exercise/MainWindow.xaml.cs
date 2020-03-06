@@ -63,6 +63,8 @@ namespace WPF_graded_exercise
                                     users.Add(new User(str));
                                     userBox.ItemsSource = users;
                             }
+                                int numberOfUsers = users.Count;
+                                labelStatusBar.Content = "Number of lines in the listbox: " + numberOfUsers + ". Last time loaded " + DateTime.Now;
                         }
                     }
                 }
