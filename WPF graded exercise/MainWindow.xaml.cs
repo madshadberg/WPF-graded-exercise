@@ -42,10 +42,11 @@ namespace WPF_graded_exercise
             Stream myStream = null;
             OpenFileDialog openFileDialog1 = new OpenFileDialog();
 
-            openFileDialog1.InitialDirectory = "c:\\";
-            openFileDialog1.Filter = "txt files (*.txt)|*.txt|All files (*.*)|*.*";
-            openFileDialog1.FilterIndex = 2;
-            openFileDialog1.RestoreDirectory = true;
+            //openFileDialog1.InitialDirectory = "c:\\"; <- default
+            // only text files or CSV files
+            openFileDialog1.Filter = "txt files (*.txt)|*.txt|CSV files (*.csv)|*.csv";
+            // text file by default
+            openFileDialog1.FilterIndex = 1;
 
             if (openFileDialog1.ShowDialog() == true)
             {
