@@ -1,0 +1,54 @@
+﻿<Window x:Class="WPF_graded_exercise.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_graded_exercise"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Menu Margin="0,0,0,185" Grid.ColumnSpan="2">
+            <MenuItem Header="File">
+                <MenuItem Header="Open" Click="MenuItem_Click" />
+            </MenuItem>
+        </Menu>
+        <ListBox x:Name="userBox" HorizontalAlignment="Left" Height="260" Margin="40,100,0,0" VerticalAlignment="Top" Width="300" Grid.RowSpan="2" SelectionChanged="userBox_SelectionChanged"/>
+        <Label Content="Users" HorizontalAlignment="Left" Margin="40,75,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="selectedUserBox" ItemsSource="{Binding Users}" HorizontalAlignment="Left" Height="260" Margin="60,100,0,0" VerticalAlignment="Top" Width="300" Grid.RowSpan="2" Grid.Column="1" FontSize="25">
+            <Grid Height="250" Width="285">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="2*"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Label Content="ID:" Grid.Row="0"/>
+                <Label Content="Name:" Grid.Row="1" />
+                <Label Content="Age:" Grid.Row="2" />
+                <Label Content="Score:" Grid.Row="3" />
+
+                <TextBlock x:Name="idTextBlock" Grid.Row="0" Grid.Column="1" Text="{Binding Id}"/>
+                <TextBlock x:Name="nameTextBlock" Grid.Row="1" Grid.Column="1" Text="{Binding Name}"/>
+                <TextBlock x:Name="ageTextBlock" Grid.Row="2" Grid.Column="1" Text="{Binding Age}"/>
+                <TextBlock x:Name="scoreTextBlock" Grid.Row="3" Grid.Column="1" Text="{Binding Score}"/>
+                
+            </Grid>
+        </ListBox>
+        <Label Content="Selected User" HorizontalAlignment="Left" Margin="60,75,0,0" VerticalAlignment="Top" Grid.Column="1"/>
+
+
+
+    </Grid>
+</Window>
